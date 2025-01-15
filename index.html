@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux Commands Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('bgpic.jpg') no-repeat center center fixed; /* Add background image */
+            background-size: cover; /* Ensure the image covers the entire background */
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .home-screen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 50vh;
+            background: rgba(44, 62, 80, 0.8); /* Semi-transparent overlay */
+            color: #fff;
+            text-align: center;
+            padding: 3rem;
+            border-bottom: 8px solid #00bcd4; /* Accent bottom border */
+        }
+
+        .home-screen h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            position: relative; /* Ensure text is above the overlay */
+        }
+
+        .home-screen p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin-bottom: 2rem;
+            position: relative; /* Ensure text is above the overlay */
+        }
+
+        .go-to-commands {
+            display: inline-block;
+            background-color: #00bcd4; /* Cyan accent color */
+            color: #fff;
+            text-decoration: none;
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            font-weight: 500;
+            box-shadow: 0 4px 10px rgba(0, 188, 212, 0.2);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .go-to-commands:hover {
+            background-color: #008c96; /* Darker cyan on hover */
+            transform: scale(1.05);
+        }
+
+        .info-section {
+            padding: 3rem;
+            max-width: 800px;
+            margin: 3rem auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            border-top: 5px solid #00bcd4;
+        }
+
+        .info-section h2 {
+            font-size: 2rem;
+            text-align: center;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-section p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            line-height: 1.8;
+        }
+
+        .info-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .home-screen {
+                height: 40vh;
+            }
+
+            .home-screen h1 {
+                font-size: 2.2rem;
+            }
+
+            .home-screen p {
+                font-size: 1rem;
+            }
+
+            .go-to-commands {
+                padding: 0.8rem 2rem;
+            }
+
+            .info-section {
+                padding: 2rem;
+            }
+
+            .info-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .info-section p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="home-screen">
+        <h1>Welcome to Linux Commands Guide</h1>
+        <p>Explore the powerful world of Linux commands and learn how to master network and connectivity tools.</p>
+        <a href="commands.html" class="go-to-commands">Go to Commands</a>
+    </div>
+
+    <div class="info-section">
+        <h2>About Linux</h2>
+        <p>Linux is a family of open-source Unix-like operating systems based on the Linux kernel, first released on September 17, 1991, by Linus Torvalds. Linux is widely used across various systems, from personal computers to servers, and is known for its stability, flexibility, and security. It forms the backbone of many internet services and devices.</p>
+        <p>The history of Linux traces back to its creator, Linus Torvalds, who started the project as a hobby while a student at the University of Helsinki. Inspired by the MINIX operating system, Torvalds sought to develop a free and open-source alternative. With contributions from developers worldwide, Linux quickly grew into a robust and versatile platform.</p>
+        <p>Today, Linux is at the core of many technologies, including Android devices, supercomputers, web servers, and even the International Space Station. Its modular design allows users to customize their systems, making it an excellent choice for developers, system administrators, and enthusiasts alike.</p>
+    </div>
+</body>
+</html>

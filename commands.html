@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux Commands Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+	
+	
+
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background: linear-gradient(135deg, #e0f7fa, #fff); /* Soft gradient background */
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #34495e; /* Dark blue-gray */
+            color: #fff;
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 5px solid #00bcd4; /* Cyan accent border */
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            line-height: 1.3;
+        }
+
+	  body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('bgofcom.jpg') no-repeat center center fixed; /* Add background image */
+            background-size: cover; /* Ensure the image covers the entire background */
+            color: #333;
+            line-height: 1.6;
+        }
+
+
+        nav {
+            background: #2c3e50; /* Dark blue-gray */
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #00bcd4; /* Cyan */
+        }
+
+        section {
+            padding: 3rem 1.5rem;
+            max-width: 900px;
+            margin: 3rem auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            font-size: 2rem;
+            color: #4A148C; /* Deep purple */
+            margin-bottom: 1rem;
+        }
+
+        .syntax, .example {
+            background: #e6f7ff; /* Soft blue */
+            border-left: 5px solid #00bcd4; /* Cyan */
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+
+        .syntax code,
+        .example code {
+            background-color: #f1f1f1;
+            padding: 0.4rem 0.6rem;
+            border-radius: 5px;
+            color: #333;
+        }
+
+        .illustration {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .illustration img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add smooth transition for transform and box-shadow */
+        }
+
+        .illustration img:hover {
+            transform: scale(1.1); /* Slightly zoom in */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #2c3e50; /* Dark blue-gray */
+            color: #fff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 1024px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+
+            nav ul {
+                gap: 1.5rem;
+            }
+
+            section {
+                padding: 2rem;
+                margin: 2rem;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+            }
+
+            .syntax, .example {
+                padding: 1rem 1.2rem;
+            }
+        }
+
+        /* Smaller devices like phones */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            nav ul li {
+                margin-bottom: 0.5rem;
+            }
+
+            section {
+                padding: 1.5rem;
+                margin: 1.5rem;
+            }
+
+            section h2 {
+                font-size: 1.6rem;
+            }
+
+            .syntax, .example {
+                padding: 1rem;
+                margin: 1rem 0;
+            }
+
+            .illustration img {
+                width: 100%; /* Ensures images are full width on mobile */
+            }
+        }
+
+        /* Very small screens */
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5rem;
+                line-height: 1.2;
+            }
+
+            section h2 {
+                font-size: 1.4rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            nav ul li a {
+                font-size: 1rem;
+            }
+
+            .syntax, .example {
+                padding: 0.8rem;
+                margin: 0.8rem 0;
+            }
+
+            footer p {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Linux Commands Guide</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#top">top</a></li>
+            <li><a href="#kill">kill</a></li>
+            <li><a href="#ifconfig">ifconfig</a></li>
+            <li><a href="#ping">ping</a></li>
+            <li><a href="#ssh">ssh</a></li>
+            <li><a href="#scp">scp</a></li>
+            <li><a href="#curl">curl</a></li>
+            <li><a href="#diff">diff</a></li>
+            <li><a href="#head">head</a></li>
+            <li><a href="#tail">tail</a></li>
+        </ul>
+    </nav>
+
+    <!-- Command Sections -->
+    <section id="top">
+        <h2>top</h2>
+        <p>Displays real-time system statistics such as CPU, memory usage, and active processes.</p>
+        <div class="syntax">
+            <strong>Syntax:</strong><br>
+            <code>top</code>
+        </div>
+        <p><strong>Use Case:</strong> Monitor system performance and identify resource-intensive processes.</p>
+        <div class="example">
+            <strong>Example:</strong><br>
+            <code>$ top</code>
+        </div>
+        <div class="illustration">
+            <img src="top.jpg" alt="Top Command Illustration">
+        </div>
+    </section>
+
+    <section id="kill">
+        <h2>kill</h2>
+        <p>Sends signals to processes, commonly used to terminate unresponsive ones.</p>
+        <div class="syntax">
+            <strong>Syntax:</strong><br>
+            <code>kill [signal] PID</code>
+        </div>
+        <p><strong>Use Case:</strong> Stop processes that are unresponsive or causing issues.</p>
+        <div class="example">
+            <strong>Example:</strong><br>
+            <code>$ kill -9 12345</code>
+        </div>
+        <div class="illustration">
+            <img src="kill.jpg" alt="Kill Command Illustration">
+        </div>
+    </section>
+
+    <section id="ifconfig">
+        <h2>ifconfig</h2>
+        <p>Displays or configures network interfaces on Linux systems.</p>
+        <div class="syntax">
+            <strong>Syntax:</strong><br>
+            <code>ifconfig [interface]</code>
+        </div>
+        <p><strong>Use Case:</strong> View network configuration or troubleshoot network issues.</p>
+        <div class="example">
+            <strong>Example:</strong><br>
+            <code>$ ifconfig eth0</code>
+        </div>
+        <div class="illustration">
+            <img src="ifconfig.jpg" alt="Ifconfig Command Illustration">
+        </div>
+    </section>
+
+    <section id="ping">
+        <h2>ping</h2>
+        <p>Tests network connectivity between your machine and another host.</p>
+        <div class="syntax">
+            <strong>Syntax:</strong><br>
+            <code>ping [options] host</code>
+        </div>
+        <p><strong>Use Case:</strong> Diagnose network connectivity issues or measure latency.</p>
+        <div class="example">
+            <strong>Example:</strong><br>
+            <code>$ ping -c 4 example.com</code>
+        </div>
+        <div class="illustration">
+            <img src="ping.jpg" alt="Ping Command Illustration">
+        </div>
+    </section>
+
+    <section id="ssh">
+        <h2>ssh</h2>
+        <p>Establishes a secure connection to a remote system over a network.</p>
+        <div class="syntax">
+            <strong>Syntax:</strong><br>
+            <code>ssh [options] user@host</code>
+        </div>
+        <p><strong>Use Case:</strong> Remotely manage servers or devices securely.</p>
+        <div class="example">
+            <strong>Example:</strong><br>
+            <code>$ ssh user@192.168.1.1</code>
+        </div>
+        <div class="illustration">
+            <img src="ssh.jpg" alt="SSH Command Illustration">
+        </div>
+    </section>
+
+    <section id="scp">
+        <h2>scp</h2>
+        <p>Securely transfers files between local and remote systems using SSH.</p>
+        <div class="syntax">
+            <strong>Syntax:</strong><br>
+            <code>scp source destination</code>
+        </div>
+        <p><strong>Use Case:</strong> Transfer files securely between systems.</p>
+        <div class="example">
+            <strong>Example:</strong><br>
+            <code>$ scp file.txt user@remote:/path</code>
+        </div>
+        <div class="illustration">
+            <img src="scp.jpg" alt="SCP Command Illustration">
+        </div>
+    </section>
+
+    <section id="curl">
+        <h2>curl</h2>
+        <p>Transfers data from or to a server using various protocols (e.g., HTTP, FTP).</p>
+        <div class="syntax">
+            <strong>Syntax:</strong><br>
+            <code>curl [options] URL</code>
+        </div>
+        <p><strong>Use Case:</strong> Test APIs or download files from the internet.</p>
+        <div class="example">
+            <strong>Example:</strong><br>
+            <code>$ curl http://example.com</code>
+        </div>
+        <div class="illustration">
+            <img src="curl.jpg" alt="Curl Command Illustration">
+        </div>
+    </section>
+
+    <section id="diff">
+        <h2>diff</h2>
+        <p>Compares files line by line and outputs the differences.</p>
+        <div class="syntax">
+            <strong>Syntax:</strong><br>
+            <code>diff [options] file1 file2</code>
+        </div>
+        <p><strong>Use Case:</strong> Identify changes between two text files.</p>
+        <div class="example">
+            <strong>Example:</strong><br>
+            <code>$ diff file1.txt file2.txt</code>
+        </div>
+        <div class="illustration">
+            <img src="diff.jpg" alt="Diff Command Illustration">
+        </div>
+    </section>
+
+    <section id="head">
+        <h2>head</h2>
+        <p>Displays the first few lines of a file.</p>
+        <div class="syntax">
+            <strong>Syntax:</strong><br>
+            <code>head [options] file</code>
+        </div>
+        <p><strong>Use Case:</strong> Quickly view the beginning of a file.</p>
+        <div class="example">
+            <strong>Example:</strong><br>
+            <code>$ head file.txt</code>
+        </div>
+        <div class="illustration">
+            <img src="head.jpg" alt="Head Command Illustration">
+        </div>
+    </section>
+
+    <section id="tail">
+        <h2>tail</h2>
+        <p>Displays the last few lines of a file.</p>
+        <div class="syntax">
+            <strong>Syntax:</strong><br>
+            <code>tail [options] file</code>
+        </div>
+        <p><strong>Use Case:</strong> View the end of a file, useful for log files.</p>
+        <div class="example">
+            <strong>Example:</strong><br>
+            <code>$ tail -n 10 file.txt</code>
+        </div>
+        <div class="illustration">
+            <img src="tail.jpg" alt="Tail Command Illustration">
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Linux Commands Guide</p>
+    </footer>
+</body>
+</html>
